@@ -1,0 +1,15 @@
+---
+- hosts: all
+
+  vars_files:
+    - vars/system_vars.yml
+
+  tasks:
+    - import_tasks: tasks/update.yml
+      tags: ['update']
+
+    - import_tasks: tasks/ubuntu-base.yml
+      tags: ['base']
+
+    - import_tasks: tasks/plex.yml
+      tags: ['plex']

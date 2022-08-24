@@ -1,0 +1,15 @@
+---
+username: jalex
+custom_ssh_port: 69
+managed_server_ip: 192.168.0.68
+
+ubuntu_packages: 
+  - ansible
+  - ansible-lint
+  - vim
+  - neofetch
+  - speedtest-cli
+  - rsync
+  - torbrowser-launcher
+  - clamtk
+

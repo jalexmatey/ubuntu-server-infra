@@ -1,0 +1,20 @@
+---
+- name: Add plex apt key
+  ansible.builtin.apt_key:
+    url: https://downloads.plex.tv/plex-keys/PlexSign.key
+    state: present
+  become: yes
+
+- name: Add plex repo
+  ansible.builtin.apt_repository:
+    repo: deb https://downloads.plex.tv/repo/deb public main
+    state: present
+  become: yes
+
+- name: Install plex
+  ansible.builtin.package:
+    name: 
+      - plexmediaserver
+    state: latest
+    update_cache: yes
+  become: yes
