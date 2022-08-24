@@ -13,19 +13,19 @@
 <br />
 <div align="center">
 
-  <h3 align="center">mac-infra</h3>
+  <h3 align="center">ubuntu-server-infra</h3>
 
   <p align="center">
-    IaC to automate my macOS environment setup.
+    IaC to automate my Ubuntu Server environment setup.
     <br />
     <a href="https://github.com/jalexm8/ubuntu-server-infra"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jalexm8/mac-infra/README.md#Installation">Installation</a>
+    <a href="https://github.com/jalexm8/ubuntu-server-infra/README.md#installation">Installation</a>
     ·
-    <a href="https://github.com/jalexm8/mac-infra/issues">Report Bug</a>
+    <a href="https://github.com/jalexm8/ubuntu-server-infra/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jalexm8/mac-infra/issues">Request Feature</a>
+    <a href="https://github.com/jalexm8/ubuntu-server-infra/issues">Request Feature</a>
   </p>
 </div>
 
@@ -57,10 +57,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a where I host my macOS environment setup IaC.
+This is a where I host my Ubuntu server environment setup IaC.
 
-Why setup MacOS with IaC?:
-* To quickly and safely get a new Mac device exactly how I want it set up, with minimal clicking of the mouse.
+Why setup Ubuntu server with IaC?:
+* To quickly and safely get a new Ubuntu server device exactly how I want it set up, with minimal clicking of the mouse.
 * I don't need to remember every thing I have done.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -75,8 +75,10 @@ Why setup MacOS with IaC?:
 
 ### Installation
 1. Clone or download this repository to your local drive.
-2. Run `./bin/bootstrap` inside this directory. This should install every other requirement, however you can run these manually on the terminal if you prefer.
-3. Run `ansible-playbook main.yml --ask-become-pass --inventory inventory` inside this directory. Enter your macOS account password when prompted for the 'BECOME' password.
+2. Ensure `inventory` is up to date.
+3. Run `ansible-playbook main.yml` inside this directory. 
+
+You can use this playbook to install remotely (preferred). However, you can run locally. Just ensure that the inventory file is updated and add `--ask-become-pass` to the command in 3.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -92,7 +94,7 @@ Distributed under the Unlicense License. See `LICENSE.txt` for more information.
 
 For now, please raise an issue.
 
-Project Link: [https://github.com/jalexm8/mac-infra](https://github.com/jalexm8/mac-infra)
+Project Link: [https://github.com/jalexm8/ubuntu-server-infra](https://github.com/jalexm8/ubuntu-server-infra)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -100,15 +102,15 @@ Project Link: [https://github.com/jalexm8/mac-infra](https://github.com/jalexm8/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/jalexm8/mac-infra.svg?style=for-the-badge
-[contributors-url]: https://github.com/jalexm8/mac-infra/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jalexm8/mac-infra.svg?style=for-the-badge
-[forks-url]: https://github.com/jalexm8/mac-infra/network/members
-[stars-shield]: https://img.shields.io/github/stars/jalexm8/mac-infra.svg?style=for-the-badge
-[stars-url]: https://github.com/jalexm8/mac-infra/stargazers
-[issues-shield]: https://img.shields.io/github/issues/jalexm8/mac-infra?color=yellow&style=for-the-badge
-[issues-url]: https://github.com/jalexm8/mac-infra/issues
-[license-shield]: https://img.shields.io/github/license/jalexm8/mac-infra.svg?style=for-the-badge
-[license-url]: https://github.com/jalexm8/mac-infra/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/jalexm8/ubuntu-server-infra.svg?style=for-the-badge
+[contributors-url]: https://github.com/jalexm8/ubuntu-server-infra/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jalexm8/ubuntu-server-infra.svg?style=for-the-badge
+[forks-url]: https://github.com/jalexm8/ubuntu-server-infra/network/members
+[stars-shield]: https://img.shields.io/github/stars/jalexm8/ubuntu-server-infra.svg?style=for-the-badge
+[stars-url]: https://github.com/jalexm8/ubuntu-server-infra/stargazers
+[issues-shield]: https://img.shields.io/github/issues/jalexm8/ubuntu-server-infra?color=yellow&style=for-the-badge
+[issues-url]: https://github.com/jalexm8/ubuntu-server-infra/issues
+[license-shield]: https://img.shields.io/github/license/jalexm8/ubuntu-server-infra.svg?style=for-the-badge
+[license-url]: https://github.com/jalexm8/ubuntu-server-infra/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jackalexander1008/
