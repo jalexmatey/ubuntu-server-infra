@@ -5,6 +5,10 @@
     state: latest
   become: yes
 
+- name: Install pip packages
+  ansible.builtin.pip:
+    name: "{{ pip_packages }}"
+
 - name: Disable SSH password auth
   ansible.builtin.lineinfile:
     dest: /etc/ssh/sshd_config
