@@ -76,9 +76,12 @@ Why setup Ubuntu server with IaC?:
 ### Installation
 1. Clone or download this repository to your local drive.
 2. Ensure `inventory` is up to date.
-3. Run `ansible-playbook main.yml` inside this directory. 
+3. Copy `example.secret_vars.yml` to `secret_vars.yml` and edit.
+4. Run `ansible-playbook main.yml` inside this directory.
 
 You can use this playbook to install remotely (preferred). However, you can run locally. Just ensure that the inventory file is updated and add `--ask-become-pass` to the command in 3.
+
+You will need to setup and configure Grafana and InfluxDB manually. I will hopefully add this to ansible in the near future.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

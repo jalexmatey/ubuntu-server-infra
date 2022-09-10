@@ -3,6 +3,7 @@
 
   vars_files:
     - vars/system_vars.yml
+    - vars/secret_vars.yml
 
   tasks:
     - import_tasks: tasks/update.yml
@@ -13,3 +14,12 @@
 
     - import_tasks: tasks/plex.yml
       tags: ['plex']
+
+    - import_tasks: tasks/grafana.yml
+      tags: ['grafana']
+
+    - import_tasks: tasks/influxdb.yml
+      tags: ['influxdb']
+
+    - import_tasks: tasks/telegraf.yml
+      tags: ['telegraf']

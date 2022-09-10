@@ -12,4 +12,8 @@ ubuntu_packages:
   - rsync
   - torbrowser-launcher
   - clamtk
+  - python3-pip
 
+pip_packages:
+  - influxdb-client
+  - influxdb
