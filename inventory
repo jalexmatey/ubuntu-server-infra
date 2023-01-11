@@ -1,2 +1,0 @@
-[all]
-server ansible_host="{{ managed_server_ip }}" ansible_user="{{ username }}" ansible_connection=ssh ansible_port="{{ custom_ssh_port }}"
