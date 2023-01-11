@@ -77,7 +77,8 @@ Why setup Ubuntu server with IaC?:
 1. Clone or download this repository to your local drive.
 2. Ensure `inventory` is up to date.
 3. Copy `example.secret_vars.yml` to `secret_vars.yml` and edit.
-4. Run `ansible-playbook main.yml` inside this directory.
+4. Copy `example.inventory.yml` to `inventory.yml` and edit.
+5. Run `ansible-playbook main.yml` inside this directory.
 
 You can use this playbook to install remotely (preferred). However, you can run locally. Just ensure that the inventory file is updated and add `--ask-become-pass` to the command in 3.
 
