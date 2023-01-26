@@ -1,0 +1,12 @@
+---
+- name: Deploy Portainer Docker container.
+  community.docker.docker_container:
+    name: Portainer
+    image: portainer/portainer-ce
+    ports:
+      - "9000:9000"
+      - "8000:8000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portatiner_data:/data
+    restart_policy: always

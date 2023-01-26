@@ -1,0 +1,20 @@
+---
+- name: Altdorf configuration.
+  hosts: altdorf
+
+  vars_files:
+    - vars/system_vars.yml
+    - vars/secret_vars.yml
+
+  roles:
+    - role: roles/ubuntu_base
+      tags: ['base']
+    - role: roles/docker_setup
+      tags: ['docker_setup']
+    - role: roles/plex_docker
+      tags: ['plex_docker']
+
+  tasks:
+
+    - import_tasks: tasks/update.yml
+      tags: ['update']

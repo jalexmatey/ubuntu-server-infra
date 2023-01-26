@@ -1,0 +1,21 @@
+---
+- name: Create Plex directories.
+  ansible.builtin.file:
+    path: "{{ media_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Deploy Plex Docker container.
+  community.docker.docker_container:
+    name: Plex
+    image: linuxserver/plex
+    ports:
+      - "32400:32400"
+    volumes:
+      - plex_data:/config
+      - "{{ media_dir }}:/media"
+    env:
+      PUID: "1000"
+      PGID: "1000"
+      VERSION: "docker"
+    restart_policy: always
