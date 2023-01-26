@@ -1,0 +1,11 @@
+name: ansible-lint
+
+on: push
+
+jobs:
+  ansible-lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Ansible Lint
+        uses: ansible/ansible-lint-action@v6.11.0
