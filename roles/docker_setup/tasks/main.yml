@@ -1,0 +1,49 @@
+---
+- name: Install Docker dependencies.
+  ansible.builtin.package:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+    state: latest
+    update_cache: true
+  become: true
+
+- name: Add Docker gpg key.
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  become: true
+
+- name: Add Docker repository to APT sources.
+  ansible.builtin.apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu jammy stable
+    state: present
+  become: true
+
+- name: Install Docker.
+  ansible.builtin.package:
+    name:
+      - docker-ce
+    state: latest
+    update_cache: true
+  become: true
+
+- name: Populate service facts.
+  ansible.builtin.service_facts:
+
+- name: Ensuring Docker has a service.
+  ansible.builtin.fail:
+    msg: Docker is not configured on the target system. Aborting...
+  when: ansible_facts.services["docker.service"] is not defined
+
+- name: Install docker pip module
+  ansible.builtin.pip:
+    name:
+      - docker
+      - docker-compose
+
+- include_tasks: users.yml
+- include_tasks: portainer.yml
