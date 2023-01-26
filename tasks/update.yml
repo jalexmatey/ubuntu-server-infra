@@ -3,5 +3,5 @@
   ansible.builtin.apt:
     name: "*"
     state: latest
-    update_cache: yes
-  become: yes
+    update_cache: true
+  become: true
