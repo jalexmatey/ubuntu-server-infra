@@ -1,0 +1,15 @@
+---
+ubuntu_packages:
+  - ansible
+  - ansible-lint
+  - vim
+  - neofetch
+  - speedtest-cli
+  - rsync
+  - torbrowser-launcher
+  - clamtk
+  - python3-pip
+
+pip_packages:
+  - influxdb-client
+  - influxdb
