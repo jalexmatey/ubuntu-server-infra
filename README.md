@@ -74,22 +74,22 @@ Why setup Ubuntu server with IaC?:
 ## Getting Started
 
 ### Installation
+> **_NOTE:_**  You will need a SSH key on the target server setting up, you can use `ssh-copy-id` to do this. More info can be found [here](https://www.ssh.com/academy/ssh/copy-id).
+
 1. Clone or download this repository to your local drive.
 2. Ensure `inventory` is up to date.
 3. Copy `example.secret_vars.yml` to `secret_vars.yml` and edit.
 4. Copy `example.inventory.yml` to `inventory.yml` and edit.
-5. Run `ansible-playbook main.yml` inside this directory.
+5. Run `ansible-playbook legolas.yml` OR `ansible-playbook altdorf.yml` inside this directory.
 
-You can use this playbook to install remotely (preferred). However, you can run locally. Just ensure that the inventory file is updated and add `--ask-become-pass` to the command in 3.
-
-You will need to setup and configure Grafana and InfluxDB manually. I will hopefully add this to ansible in the near future.
+> **_NOTE:_**  You may need to add `--ask-become-pass` and `--extra-vars "custom_ssh_port=22"` to step 5 on the first run.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->
 ## License
 
-Distributed under the Unlicense License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
