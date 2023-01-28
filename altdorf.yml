@@ -15,6 +15,5 @@
       tags: ['plex_docker']
 
   tasks:
-
     - import_tasks: tasks/update.yml
       tags: ['update']
