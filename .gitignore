@@ -1,2 +1,3 @@
 vars/secret_vars.yml
 inventory
+roles/grafana_docker/files/.env

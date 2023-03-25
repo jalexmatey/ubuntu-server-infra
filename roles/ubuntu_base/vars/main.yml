@@ -9,6 +9,7 @@ ubuntu_packages:
   - torbrowser-launcher
   - clamtk
   - python3-pip
+  - network-manager
 
 pip_packages:
   - influxdb-client

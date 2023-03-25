@@ -1,0 +1,46 @@
+{{ define "internet.check_title" }}
+{{ if .Alerts.Firing -}}
+{{ range .Alerts.Firing -}}
+{{ .Labels.alertname }}
+{{ end -}}
+{{ end -}}
+{{ if .Alerts.Resolved -}}
+{{ len .Alerts.Resolved }} resolved alert(s)
+{{ end }}
+{{ end }}
+
+{{ define "internet.check_alert" }}
+
+`{{ .Labels.alertname }}` firing since {{ .StartsAt.Format "2006-01-02 15:04:05" }}
+**Summary:** {{ .Annotations.summary }}
+
+{{ if .Annotations.description -}}
+**Description:** {{ .Annotations.description }}
+
+{{ else -}}
+**Description:** none
+
+{{ end -}}
+
+{{ if .Labels -}}
+**Labels:**
+{{ range .Labels.SortedPairs -}}
+- {{ .Name }}: {{ .Value }}
+{{ end -}}
+{{ end -}}
+---
+{{ end }}
+
+{{ define "internet.check_message" }}
+{{ if .Alerts.Firing }}
+{{ range .Alerts.Firing }}
+{{ template "internet.check_alert" .}}
+{{ end }}
+{{ end }}
+{{ if .Alerts.Resolved }}
+{{ range .Alerts.Resolved }}
+
+`{{ .Labels.alertname }}` resolved at {{ .EndsAt.Format "2006-01-02 15:04:05" }}
+{{ end }}
+{{ end }}
+{{ end }}

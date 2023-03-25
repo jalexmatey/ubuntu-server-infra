@@ -9,8 +9,6 @@
   community.docker.docker_container:
     name: Plex
     image: linuxserver/plex
-    ports:
-      - "32400:32400"
     volumes:
       - plex_data:/config
       - "{{ media_dir }}:/media"
@@ -18,4 +16,6 @@
       PUID: "1000"
       PGID: "1000"
       VERSION: "docker"
+      PLEX_CLAIM: "{{ plex_token }}"
+    network_mode: host
     restart_policy: always

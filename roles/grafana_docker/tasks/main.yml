@@ -1,0 +1,58 @@
+---
+- name: Create a .monitoring directory
+  ansible.builtin.file:
+    path: "{{ config_path }}"
+    state: directory
+    owner: root
+    group: docker
+    mode: '0755'
+  become: true
+
+- name: Create a telegraf directory
+  ansible.builtin.file:
+    path: "{{ config_path }}/telegraf"
+    state: directory
+    owner: root
+    group: docker
+    mode: '0755'
+  become: true
+
+- name: Create a telegraf.d directory
+  ansible.builtin.file:
+    path: "{{ config_path }}/telegraf/telegraf.d"
+    state: directory
+    owner: root
+    group: docker
+    mode: '0755'
+  become: true
+
+- name: Copy telegraf.conf over to host
+  ansible.builtin.copy:
+    src: telegraf.conf
+    dest: "{{ config_path }}/telegraf/telegraf.conf"
+    owner: root
+    group: docker
+    mode: '0644'
+  become: true
+
+- name: Copy telegraf_packages.sh over to host
+  ansible.builtin.copy:
+    src: telegraf_packages.sh
+    dest: "{{ config_path }}/telegraf_packages.sh"
+    owner: root
+    group: docker
+    mode: '0755'
+  become: true
+
+- name: Copy env over to host
+  ansible.builtin.copy:
+    src: .env
+    dest: "{{ config_path }}/.env"
+    owner: root
+    group: docker
+    mode: '0644'
+  become: true
+
+- include_tasks: grafana.yml
+- include_tasks: influxdb.yml
+- include_tasks: telegraf.yml
