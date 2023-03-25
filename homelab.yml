@@ -15,3 +15,5 @@
       tags: ['plex_docker']
     - role: roles/grafana_docker
       tags: ['grafana_docker']
+    - role: roles/5etools_docker
+      tags: ['5etools_docker']
