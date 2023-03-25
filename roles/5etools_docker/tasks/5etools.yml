@@ -1,0 +1,12 @@
+---
+- name: Deploy 5e.tools Docker container.
+  community.docker.docker_container:
+    name: 5etools-docker
+    image: jafner/5etools-docker
+    ports:
+      - "8008:80/tcp"
+    volumes:
+      - 5etools-docker:/usr/local/apache2/htdocs
+    env:
+      SOURCE=GITHUB
+    restart_policy: always

@@ -1,6 +1,6 @@
 ---
-- name: Altdorf configuration.
-  hosts: altdorf
+- name: Homelab configuration
+  hosts: homelabs
 
   vars_files:
     - vars/system_vars.yml
@@ -13,7 +13,5 @@
       tags: ['docker_setup']
     - role: roles/plex_docker
       tags: ['plex_docker']
-
-  tasks:
-    - import_tasks: tasks/update.yml
-      tags: ['update']
+    - role: roles/grafana_docker
+      tags: ['grafana_docker']

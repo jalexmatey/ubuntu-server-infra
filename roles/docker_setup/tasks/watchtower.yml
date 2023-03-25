@@ -1,0 +1,9 @@
+---
+- name: Deploy watchtower Docker container.
+  community.docker.docker_container:
+    name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 43200
+    restart_policy: always

@@ -1,0 +1,11 @@
+---
+- name: Deploy Grafana Docker container.
+  community.docker.docker_container:
+    name: Grafana
+    image: grafana/grafana-oss:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - grafana-data:/var/lib/grafana:rw
+    restart_policy: always

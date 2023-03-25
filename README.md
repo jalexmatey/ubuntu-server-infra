@@ -80,7 +80,8 @@ Why setup Ubuntu server with IaC?:
 2. Ensure `inventory` is up to date.
 3. Copy `example.secret_vars.yml` to `secret_vars.yml` and edit.
 4. Copy `example.inventory.yml` to `inventory.yml` and edit.
-5. Run `ansible-playbook legolas.yml` OR `ansible-playbook altdorf.yml` inside this directory.
+5. Copy `example.env` to `.env` and edit.
+6. Run `ansible-playbook homelab.yml` inside this directory.
 
 > **_NOTE:_**  You may need to add `--ask-become-pass` and `--extra-vars "custom_ssh_port=22"` to step 5 on the first run.
 
