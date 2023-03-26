@@ -17,3 +17,7 @@
       tags: ['grafana_docker']
     - role: roles/5etools_docker
       tags: ['5etools_docker']
+
+  tasks:
+    - import_tasks: tasks/reboot.yml
+      tags: ['never', 'reboot']
