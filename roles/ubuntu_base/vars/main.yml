@@ -10,6 +10,8 @@ ubuntu_packages:
   - clamtk
   - python3-pip
   - network-manager
+  - linux-tools-common
+  - linux-tools-generic
 
 pip_packages:
   - influxdb-client
