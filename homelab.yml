@@ -17,6 +17,12 @@
       tags: ['grafana_docker']
     - role: roles/5etools_docker
       tags: ['5etools_docker']
+    - role: roles/pihole_docker
+      tags: ['pihole']
+    - role: roles/heimdall_docker
+      tags: ['heimdall']
+    - role: roles/kavita_docker
+      tags: ['kavita']
 
   tasks:
     - import_tasks: tasks/reboot.yml
