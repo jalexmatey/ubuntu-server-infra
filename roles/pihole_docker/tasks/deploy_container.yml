@@ -1,0 +1,16 @@
+---
+- name: Deploy PiHole Docker container.
+  community.docker.docker_container:
+    name: PiHole
+    image: pihole/pihole:latest
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    env:
+      TZ: 'Europe/London'
+      DNSMASQ_LISTENING: all
+    restart_policy: unless-stopped

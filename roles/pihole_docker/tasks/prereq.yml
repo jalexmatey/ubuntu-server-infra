@@ -1,0 +1,19 @@
+---
+- name: Disable stub resolver.
+  ansible.builtin.lineinfile:
+    dest: /etc/systemd/resolved.conf
+    regexp: "#?DNSStubListener=yes"
+    line: "DNSStubListener=no"
+  become: true
+  notify: Restart systemd-resolved service
+
+- name: Create a symbolic link
+  ansible.builtin.file:
+    src: /run/systemd/resolve/resolv.conf
+    dest: /etc/resolv.conf
+    state: link
+  become: true
+  notify: Restart systemd-resolved service
+
+- name: Run handlers (if notified)
+  ansible.builtin.meta: flush_handlers

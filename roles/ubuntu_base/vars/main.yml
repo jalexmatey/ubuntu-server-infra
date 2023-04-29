@@ -12,6 +12,7 @@ ubuntu_packages:
   - network-manager
   - linux-tools-common
   - linux-tools-generic
+  - powertop
 
 pip_packages:
   - influxdb-client
