@@ -11,3 +11,10 @@
 - name: Install telegraf telegraf_packages.sh
   ansible.builtin.script:
     cmd: "{{ role_path }}/files/telegraf_packages.sh"
+
+- name: Ensure speedtest is installed.
+  ansible.builtin.cron:
+    name: "install telegraf packages"
+    minute: "0"
+    hour: "*/6"
+    job: "/bin/bash {{ config_path }}/telegraf_packages.sh > /dev/null"
