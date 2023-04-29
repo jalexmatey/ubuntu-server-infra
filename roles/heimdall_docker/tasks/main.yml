@@ -1,0 +1,15 @@
+---
+- name: Deploy heimdall Docker container.
+  community.docker.docker_container:
+    name: heimdall
+    image: lscr.io/linuxserver/heimdall:latest
+    ports:
+      - "443:443/tcp"
+      - "8080:80/tcp"
+    volumes:
+      - ./.heimdall/config:/config
+    env:
+      TZ: 'Europe/London'
+      PUID: '1000'
+      PGID: '1000'
+    restart_policy: unless-stopped
