@@ -1,0 +1,17 @@
+---
+- name: Copy prometheus.yml over to host
+  ansible.builtin.copy:
+    src: prometheus.yml
+    dest: "{{ prometheus_config_path }}"
+    mode: '0644'
+  become: true
+
+- name: Deploy prometheus Docker container.
+  community.docker.docker_container:
+    name: Prometheus
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - "{{ prometheus_config_path }}:/etc/prometheus"
+    restart_policy: always

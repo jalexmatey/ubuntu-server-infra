@@ -11,10 +11,8 @@
       tags: ['base']
     - role: roles/docker_setup
       tags: ['docker_setup']
-    - role: roles/plex_docker
-      tags: ['plex_docker']
     - role: roles/grafana_docker
-      tags: ['grafana_docker']
+      tags: ['grafana_docker', 'monitoring']
     - role: roles/5etools_docker
       tags: ['5etools_docker']
     - role: roles/pihole_docker
@@ -23,6 +21,12 @@
       tags: ['heimdall']
     - role: roles/kavita_docker
       tags: ['kavita']
+    - role: roles/prometheus_docker
+      tags: ['prometheus', 'monitoring']
+    - role: roles/plex_docker
+      tags: ['plex_docker']
+    - role: roles/plex_stat_explorer
+      tags: ['plex_stats', 'monitoring']
 
   tasks:
     - import_tasks: tasks/reboot.yml
