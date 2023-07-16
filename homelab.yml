@@ -13,7 +13,7 @@
       tags: ['docker_setup']
     - role: grafana_docker
       tags: ['grafana_docker', 'monitoring']
-    - role: 5etools_docker
+    - role: fiveetools_docker
       tags: ['5etools_docker']
     - role: pihole_docker
       tags: ['pihole']
