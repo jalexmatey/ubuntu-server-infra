@@ -45,6 +45,11 @@
       - docker
       - docker-compose
 
-- include_tasks: users.yml
-- include_tasks: portainer.yml
-- include_tasks: watchtower.yml
+- name: Setup users.
+  ansible.builtin.include_tasks: users.yml
+
+- name: Deploy portainer.
+  ansible.builtin.include_tasks: portainer.yml
+
+- name: Deploy watchtower.
+  ansible.builtin.include_tasks: watchtower.yml

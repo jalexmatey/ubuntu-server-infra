@@ -1,11 +1,22 @@
+---
 name: ansible-lint
-
-on: push
+'on':
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 5 * * 4"
 
 jobs:
   ansible-lint:
+    name: Ansible Lint
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Ansible Lint
-        uses: ansible/ansible-lint-action@v6.15.0
+      # Important: This sets up your GITHUB_WORKSPACE environment variable
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint-action@v6

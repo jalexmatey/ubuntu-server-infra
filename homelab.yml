@@ -7,27 +7,28 @@
     - vars/secret_vars.yml
 
   roles:
-    - role: roles/ubuntu_base
+    - role: ubuntu_base
       tags: ['base']
-    - role: roles/docker_setup
+    - role: docker_setup
       tags: ['docker_setup']
-    - role: roles/grafana_docker
+    - role: grafana_docker
       tags: ['grafana_docker', 'monitoring']
-    - role: roles/5etools_docker
+    - role: fiveetools_docker
       tags: ['5etools_docker']
-    - role: roles/pihole_docker
+    - role: pihole_docker
       tags: ['pihole']
-    - role: roles/heimdall_docker
+    - role: heimdall_docker
       tags: ['heimdall']
-    - role: roles/kavita_docker
+    - role: kavita_docker
       tags: ['kavita']
-    - role: roles/prometheus_docker
+    - role: prometheus_docker
       tags: ['prometheus', 'monitoring']
-    - role: roles/plex_docker
+    - role: plex_docker
       tags: ['plex_docker']
-    - role: roles/plex_stat_explorer
+    - role: plex_stat_explorer
       tags: ['plex_stats', 'monitoring']
 
   tasks:
-    - import_tasks: tasks/reboot.yml
+    - name: Reboot VM
+      ansible.builtin.import_tasks: tasks/reboot.yml
       tags: ['never', 'reboot']

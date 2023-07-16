@@ -1,0 +1,3 @@
+---
+- name: Setup 5etools
+  ansible.builtin.include_tasks: 5etools.yml
