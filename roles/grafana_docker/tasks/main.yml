@@ -53,6 +53,11 @@
     mode: '0644'
   become: true
 
-- include_tasks: grafana.yml
-- include_tasks: influxdb.yml
-- include_tasks: telegraf.yml
+- name: Deploy Grafana.
+  ansible.builtin.include_tasks: grafana.yml
+
+- name: Deploy influxDB.
+  ansible.builtin.include_tasks: influxdb.yml
+
+- name: Deploy telegraf.
+  ansible.builtin.include_tasks: telegraf.yml
