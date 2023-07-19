@@ -1,0 +1,9 @@
+---
+- name: Deploy 5e.tools Docker container.
+  community.docker.docker_container:
+    name: uptime-kuma
+    image: louislam/uptime-kuma:1
+    ports:
+      - "3001:3001/tcp"
+    volumes:
+      - 'uptime-kuma:/app/data'
