@@ -4,7 +4,7 @@
     name: heimdall
     image: lscr.io/linuxserver/heimdall:latest
     ports:
-      - "443:443/tcp"
+      - "8443:443/tcp"
       - "8080:80/tcp"
     volumes:
       - ./.heimdall/config:/config
