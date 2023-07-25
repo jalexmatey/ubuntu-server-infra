@@ -1,0 +1,12 @@
+---
+- name: Deploy qbittorent.
+  ansible.builtin.include_tasks: qbittorrent-vpn.yml
+
+- name: Deploy Jackett.
+  ansible.builtin.include_tasks: jackett.yml
+
+- name: Deploy Sonarr.
+  ansible.builtin.include_tasks: sonarr.yml
+
+- name: Deploy Radarr.
+  ansible.builtin.include_tasks: radarr.yml

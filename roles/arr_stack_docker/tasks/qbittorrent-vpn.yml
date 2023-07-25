@@ -1,0 +1,20 @@
+---
+- name: Deploy qbittorrent Docker container.
+  community.docker.docker_container:
+    name: qbittorent
+    image: markusmcnugen/qbittorrentvpn
+    ports:
+      - "8080:8080"
+      - '8999:8999'
+      - '8999:8999/udp'
+    volumes:
+      - './qbittorent-config:/config'
+      - '{{ plex_dir_path }}/downloads:/downloads'
+    env:
+      VPN_ENABLED: 'yes'
+      LAN_NETWORK: '192.168.1.0/24'
+      NAME_SERVERS: '8.8.8.8,8.8.4.4'
+      VPN_USERNAME: '{{ VPN_USERNAME }}'
+      VPN_PASSWORD: '{{ VPN_PASSWORD }}'
+    restart_policy: always
+    privileged: true

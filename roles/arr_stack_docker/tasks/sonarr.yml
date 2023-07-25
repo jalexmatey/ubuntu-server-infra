@@ -1,0 +1,16 @@
+---
+- name: Deploy Sonarr Docker container.
+  community.docker.docker_container:
+    name: sonarr
+    image: lscr.io/linuxserver/sonarr:latest
+    ports:
+      - '8989:8989'
+    volumes:
+      - './sonarr-data:/config'
+      - '{{ plex_dir_path }}/Media/TV:/tv'
+      - '{{ plex_dir_path }}/downloads:/downloads'
+    env:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: 'Europe/London'
+    restart_policy: unless-stopped
