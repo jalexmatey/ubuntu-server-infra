@@ -29,6 +29,8 @@
       tags: ['plex_stats', 'monitoring']
     - role: uptime_kuma_docker
       tags: ['uptime_kuma']
+    - role: arr_stack_docker
+      tags: ['arr_matey']
 
   tasks:
     - name: Reboot VM

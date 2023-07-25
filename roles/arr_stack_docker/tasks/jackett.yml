@@ -1,0 +1,15 @@
+---
+- name: Deploy Jackett Docker container.
+  community.docker.docker_container:
+    name: jackett
+    image: lscr.io/linuxserver/jackett:latest
+    ports:
+      - '9117:9117'
+    volumes:
+      - './jackett-data:/config'
+      - '{{ plex_dir_path }}/downloads:/downloads'
+    env:
+      PUID: '1000'
+      PGID: '1000'
+      TZ: 'Europe/London'
+    restart_policy: unless-stopped
