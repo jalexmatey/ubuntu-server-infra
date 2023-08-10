@@ -10,3 +10,6 @@
 
 - name: Deploy Radarr.
   ansible.builtin.include_tasks: radarr.yml
+
+- name: Set up backup.
+  ansible.builtin.include_tasks: backup.yml
