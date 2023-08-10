@@ -1,0 +1,17 @@
+---
+- name: Deploy pi.alert Docker container.
+  community.docker.docker_container:
+    name: pialert
+    image: jokobsk/pi.alert:latest
+    ports:
+      - "3001:3001/tcp"
+    volumes:
+      - './pialert/config:/home/pi/pialert/config'
+      - './pialert/db:/home/pi/pialert/db'
+    network_mode: host
+    restart_policy: unless-stopped
+    env:
+      HOST_USER_ID: '1000'
+      HOST_USER_GID: '1000'
+      TZ: 'Europe/London'
+      port: '20211'

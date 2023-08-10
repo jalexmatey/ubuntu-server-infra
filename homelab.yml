@@ -31,6 +31,8 @@
       tags: ['uptime_kuma']
     - role: arr_stack_docker
       tags: ['arr_matey']
+    - role: pi_alert_docker
+      tags: ['pi_alert']
 
   tasks:
     - name: Reboot VM

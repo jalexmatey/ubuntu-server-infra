@@ -1,0 +1,3 @@
+---
+- name: Setup Pi.Alert
+  ansible.builtin.include_tasks: pi_alert.yml
