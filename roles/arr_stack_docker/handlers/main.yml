@@ -1,0 +1,19 @@
+---
+- name: Download gdrive 3
+  ansible.builtin.get_url:
+    url: https://github.com/glotlabs/gdrive/releases/download/3.9.0/gdrive_linux-x64.tar.gz
+    dest: /tmp/gdrive_linux-x64.tar.gz
+    mode: '0755'
+  notify:
+    - Extract /tmp/gdrive_linux-x64.tar.gz into /tmp/gdrive/
+
+- name: Extract /tmp/gdrive_linux-x64.tar.gz into /usr/local/gdrive
+  ansible.builtin.unarchive:
+    src: /tmp/gdrive_linux-x64.tar.gz
+    dest: /usr/local/gdrive
+  notify:
+    - User message
+
+- name: User message
+  ansible.builtin.debug:
+    msg: "You now need to run: gdrive account add"

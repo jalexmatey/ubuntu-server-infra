@@ -1,0 +1,21 @@
+- name: Copy arr_backup.sh over to host
+  ansible.builtin.copy:
+    src: arr_backup.sh
+    dest: "{{ config_path }}/arr_backup.sh"
+    owner: root
+    group: docker
+    mode: '0755'
+  become: true
+
+- name: Check gdrive exists
+  ansible.builtin.stat:
+    path: /usr/bin/gdrive
+  notify:
+    - Download gdrive 3
+
+- name: Set cron for backup
+  ansible.builtin.cron:
+    name: "arr_backup"
+    minute: "3"
+    hour: "0"
+    job: "/bin/bash {{ config_path }}/arr_backup.sh > /dev/null 2>&1"
