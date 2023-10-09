@@ -1,0 +1,19 @@
+---
+- name: Deploy homer Docker container.
+  community.docker.docker_container:
+    name: homer
+    image: b4bz/homer:latest
+    ports:
+      - '8082:8080'
+    volumes:
+      - './.homer/assets:/www/assets'
+    restart_policy: always
+
+- name: Copy config.yml over to host
+  ansible.builtin.copy:
+    src: config.yml
+    dest: "./.homer/assets/config.yml"
+    owner: root
+    group: docker
+    mode: '0644'
+  become: true

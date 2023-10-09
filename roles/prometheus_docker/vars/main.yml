@@ -1,2 +1,2 @@
 ---
-prometheus_config_path: ./prometheus_config
+prometheus_docker_prometheus_config_path: ./prometheus_config

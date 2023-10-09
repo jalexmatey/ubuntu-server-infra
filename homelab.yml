@@ -11,28 +11,20 @@
       tags: ['base']
     - role: docker_setup
       tags: ['docker_setup']
-    - role: grafana_docker
-      tags: ['grafana_docker', 'monitoring']
     - role: fiveetools_docker
       tags: ['5etools_docker']
-    - role: pihole_docker
-      tags: ['pihole']
     - role: heimdall_docker
       tags: ['heimdall']
-    - role: kavita_docker
-      tags: ['kavita']
-    - role: prometheus_docker
-      tags: ['prometheus', 'monitoring']
     - role: plex_docker
       tags: ['plex_docker']
-    - role: plex_stat_explorer
-      tags: ['plex_stats', 'monitoring']
     - role: uptime_kuma_docker
       tags: ['uptime_kuma']
     - role: arr_stack_docker
       tags: ['arr_matey']
     - role: pi_alert_docker
       tags: ['pi_alert']
+    - role: homer_docker
+      tags: ['homer']
 
   tasks:
     - name: Reboot VM

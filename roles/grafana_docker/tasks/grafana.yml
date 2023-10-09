@@ -8,4 +8,4 @@
     volumes:
       - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
       - grafana-data:/var/lib/grafana:rw
-    restart_policy: always
+    restart_policy: false
