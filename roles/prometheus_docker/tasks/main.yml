@@ -14,4 +14,4 @@
       - "9090:9090"
     volumes:
       - "{{ prometheus_config_path }}:/etc/prometheus"
-    restart_policy: always
+    restart_policy: no

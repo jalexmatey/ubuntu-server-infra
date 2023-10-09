@@ -9,4 +9,4 @@
       - 5etools-docker:/usr/local/apache2/htdocs
     env:
       SOURCE=GITHUB
-    restart_policy: always
+    restart_policy: no

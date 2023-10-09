@@ -8,4 +8,4 @@
     volumes:
       - "{{ books_dir }}:/manga"
       - ./kavita_data:/kavita/config
-    restart_policy: unless-stopped
+    restart_policy: no

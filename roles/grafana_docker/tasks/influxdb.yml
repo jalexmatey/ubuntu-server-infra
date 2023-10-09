@@ -7,4 +7,4 @@
       - "8086:8086"
     volumes:
       - influxdb-storage:/var/lib/influxdb2:rw
-    restart_policy: always
+    restart_policy: no
