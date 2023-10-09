@@ -25,7 +25,7 @@ connectivityCheck: true # whether you want to display a message when the apps ar
 
 # Optional: Proxy / hosting option
 proxy:
-  useCredentials: false # send cookies & authorization headers when fetching service specific data. Set to `true` if you use an authentication proxy. Can be overrided on service level. 
+  useCredentials: false # send cookies & authorization headers when fetching service specific data. Set to `true` if you use an authentication proxy. Can be overrided on service level.
 
 # Set the default layout and color scheme
 defaults:
@@ -102,7 +102,7 @@ links:
   - name: "WhoAmI website"
     icon: "fa-regular fa-file fa-beat"
     url: "https://whoami.jalexmatey.co.uk"
-  
+
   # this will link to a second homer page that will load config from page2.yml and keep default config values as in config.yml file
   # see url field and assets/page.yml used in this example:
   #- name: "Second Page"

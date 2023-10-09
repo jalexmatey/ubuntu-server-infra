@@ -1,5 +1,5 @@
 ---
-ubuntu_packages:
+ubuntu_base_ubuntu_packages:
   - ansible
   - ansible-lint
   - vim
@@ -14,6 +14,6 @@ ubuntu_packages:
   - linux-tools-generic
   - powertop
 
-pip_packages:
+ubuntu_base_pip_packages:
   - influxdb-client
   - influxdb
