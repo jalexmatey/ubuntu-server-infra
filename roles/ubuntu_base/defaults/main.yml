@@ -1,4 +1,4 @@
 ---
-ubuntu_base_custom_ssh_port: 22
+custom_ssh_port: 22
 
-ubuntu_base_username: jalex
+username: jalex

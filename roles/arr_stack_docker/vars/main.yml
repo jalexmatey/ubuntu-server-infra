@@ -1,2 +1,2 @@
 ---
-arr_stack_docker_config_path: "/home/{{ username }}"
+config_path: "/home/{{ username }}"

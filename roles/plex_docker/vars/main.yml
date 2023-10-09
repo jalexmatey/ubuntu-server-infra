@@ -1,2 +1,2 @@
 ---
-plex_docker_media_dir: "/home/{{ username }}/plex_media"
+media_dir: "/home/{{ username }}/plex_media"

@@ -5,7 +5,7 @@
     image: telegraf:alpine
     volumes:
       - "{{ config_path }}/telegraf/:/etc/telegraf/:ro"
-    restart_policy: false
+    restart_policy: always
     env_file: "{{ config_path }}/.env"
 
 - name: Install telegraf telegraf_packages.sh

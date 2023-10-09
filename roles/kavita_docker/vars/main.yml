@@ -1,2 +1,2 @@
 ---
-kavita_docker_books_dir: "/home/{{ username }}/plex_media/books"
+books_dir: "/home/{{ username }}/plex_media/books"

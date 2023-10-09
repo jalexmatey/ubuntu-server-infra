@@ -1,2 +1,2 @@
 ---
-grafana_docker_config_path: /usr/share/homelab-monitoring
+config_path: /usr/share/homelab-monitoring
