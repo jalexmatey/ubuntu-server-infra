@@ -9,10 +9,10 @@
       - './.homer/assets:/www/assets'
     restart_policy: always
 
-- name: Copy config.yml over to host
+- name: Copy assets over to host
   ansible.builtin.copy:
-    src: config.yml
-    dest: "./.homer/assets/config.yml"
+    src: assets/
+    dest: "./.homer/assets/"
     owner: root
     group: docker
     mode: '0644'

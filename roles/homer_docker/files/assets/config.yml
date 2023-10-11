@@ -1,0 +1,216 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/v5/search for icons options
+
+# Optional: Use external configuration file.
+# Using this will ignore remaining config in this file
+# externalConfig: https://example.com/server-luci/config.yaml
+
+title: "Jalex's Dashboard"
+subtitle: "Homer"
+icon: "fa-solid fa-flask fa-bounce"
+
+header: false
+footer: '<p>Theme made with <span class="has-text-danger">❤️</span> by <a href="https://github.com/WalkxCode">Walkx</a></p>' # Set false if you want to hide it.
+
+stylesheet:
+  - "assets/custom.css"
+
+columns: "4" # You can change this to any number that is a factor of 12: (1, 2, 3, 4, 6, 12)
+theme: default
+colors:
+  light:
+    highlight-primary: "#fff5f2"
+    highlight-secondary: "#fff5f2"
+    highlight-hover: "#bebebe"
+    background: "#12152B"
+    card-background: "rgba(255, 245, 242, 0.8)"
+    text: "#ffffff"
+    text-header: "#fafafa"
+    text-title: "#000000"
+    text-subtitle: "#111111"
+    card-shadow: rgba(0, 0, 0, 0.5)
+    link: "#3273dc"
+    link-hover: "#2e4053"
+    background-image: "../assets/wallpaper-light.jpeg" # Change wallpaper.jpeg to the name of your own custom wallpaper!
+  dark:
+    highlight-primary: "#181C3A"
+    highlight-secondary: "#181C3A"
+    highlight-hover: "#1F2347"
+    background: "#12152B"
+    card-background: "rgba(24, 28, 58, 0.8)"
+    text: "#eaeaea"
+    text-header: "#7C71DD"
+    text-title: "#fafafa"
+    text-subtitle: "#8B8D9C"
+    card-shadow: rgba(0, 0, 0, 0.5)
+    link: "#c1c1c1"
+    link-hover: "#fafafa"
+    background-image: "../assets/wallpaper.jpeg"
+
+# Services
+# First level array represents a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "//Personal"
+    icon: "fa-regular fa-person"
+    items:
+      - name: "BitWarden"
+        logo: "assets/tools/bitwarden.png"
+        subtitle: "Personal password manager"
+        tag: "passwords"
+        url: "https://vault.bitwarden.com/#/login"
+        target: "_blank" # optional html tag target attribute
+      - name: "To Do List"
+        logo: "assets/tools/todoist.png"
+        subtitle: "Personal To Do list"
+        tag: "to-do"
+        url: "https://todoist.com/app/today"
+        target: "_blank" # optional html tag target attribute
+      - name: "Gmail"
+        logo: "assets/tools/gmail.png"
+        subtitle: "Personal email"
+        tag: "gmail"
+        url: "https://mail.google.com/mail/u/0/#inbox"
+        target: "_blank" # optional html tag target attribute
+      - name: "Zoho mail"
+        logo: "assets/tools/zohomail.png"
+        subtitle: "Business email"
+        tag: "zohomail"
+        url: "https://mail.zoho.eu/zm/#mail/folder/inbox"
+        target: "_blank" # optional html tag target attribute
+      - name: "LinkedIn"
+        logo: "assets/tools/linkedin.png"
+        subtitle: "Personal LinkedIn profile"
+        tag: "linkedin"
+        url: "https://www.linkedin.com/in/jackalexander1008/"
+        target: "_blank" # optional html tag target attribute
+      - name: "GitHub"
+        logo: "assets/tools/github.png"
+        subtitle: "Personal GitHub account"
+        tag: "github"
+        url: "https://github.com/jalexmatey"
+        target: "_blank" # optional html tag target attribute
+      - name: "Website"
+        logo: "assets/tools/google-sites.png"
+        subtitle: "Personal website which hosts my CV"
+        tag: "whoami"
+        url: "https://whoami.jalexmatey.co.uk"
+        target: "_blank" # optional html tag target attribute
+      - name: "ChatGPT"
+        logo: "assets/tools/chatgpt.png"
+        subtitle: "AI magic"
+        tag: "chatgpt"
+        url: "https://chat.openai.com"
+        target: "_blank" # optional html tag target attribute
+  - name: "//Finances"
+    icon: "fa-solid fa-sterling-sign"
+    items:
+      - name: "Finance Spreadsheet"
+        logo: "assets/tools/google-sheets.png"
+        subtitle: "Personal finance spreadsheet"
+        tag: "finance-spreadsheet"
+        url: "https://docs.google.com/spreadsheets/d/19lFfjtal0I-xBWjPK0DLVsL-E6p5CxUOm0_gPj856YU/edit#gid=0"
+        target: "_blank" # optional html tag target attribute
+      - name: "InvestEngine"
+        icon: "fa-solid fa-money-bill-trend-up"
+        subtitle: "Investment account"
+        tag: "investengine"
+        url: "https://investengine.com/login/"
+        target: "_blank" # optional html tag target attribute
+      - name: "AMEX"
+        icon: "fa-brands fa-cc-amex"
+        subtitle: "AMEX online account"
+        tag: "amex"
+        url: "https://www.americanexpress.com/en-gb/account/login"
+        target: "_blank" # optional html tag target attribute
+      - name: "TopCashBack"
+        icon: "fa-regular fa-money-bill-1"
+        subtitle: "Cashback on purchases"
+        tag: "topcashback"
+        url: "https://www.topcashback.co.uk"
+        target: "_blank" # optional html tag target attribute
+      - name: "MoneySavingExpert"
+        icon: "fa-solid fa-piggy-bank"
+        subtitle: "Help from Martin Lewis"
+        tag: "moneysavingexpert"
+        url: "https:/www.moneysavingexpert.com"
+        target: "_blank" # optional html tag target attribute
+      - name: "UK Personal Finance"
+        logo: "assets/tools/reddit.png"
+        subtitle: "UK personal finance subreddit"
+        tag: "ukpersonalfinance"
+        url: "https://www.reddit.com/r/UKPersonalFinance/"
+        target: "_blank" # optional html tag target attribute
+  - name: "//Monitor"
+    icon: "fa-regular fa-eye"
+    # A path to an image can also be provided. Note that icon take precedence if both icon and logo are set.
+    # logo: "path/to/logo"
+    items:
+      - name: "Portainer"
+        logo: "assets/tools/portainer.png"
+        subtitle: "Docker management"
+        tag: "portainer"
+        url: "http://homelab1.jalexmatey.co.uk:9000"
+        target: "_blank" # optional html tag target attribute
+        tagstyle: "is-info"
+      - name: "Uptime Kuma"
+        logo: "assets/tools/uptime-kuma.png"
+        subtitle: "Uptime Kuma dashboard"
+        tag: "uptime-kuma"
+        tagstyle: "is-info"
+        url: "http://homelab1.jalexmatey.co.uk:3001/status/main"
+      - name: "PiAlert"
+        logo: "assets/tools/pi-alert.png"
+        subtitle: "Network device monitoring"
+        tag: "pi-alert"
+        tagstyle: "is-info"
+        url: "http://homelab1.jalexmatey.co.uk:20211/devices.php"
+      - name: "Wazuh"
+        logo: "assets/tools/wazuh.png"
+        subtitle: "Device ISO compliant monitoring"
+        tag: "wazuh"
+        tagstyle: "is-info"
+        url: "https://homelab1.jalexmatey.co.uk/app/login?"
+  - name: "//Media"
+    icon: "fa-solid fa-tv"
+    items:
+      - name: "Plex"
+        logo: "assets/tools/plex.png"
+        subtitle: "Watchy watchy"
+        tag: "plex"
+        tagstyle: "is-success"
+        url: "http://homelab1.jalexmatey.co.uk:32400"
+      - name: "qBittorent"
+        logo: "assets/tools/qbittorrent.png"
+        subtitle: "ISO downloader"
+        tag: "qbittorrent"
+        tagstyle: "is-success"
+        url: "http://homelab1.jalexmatey.co.uk:8080"
+      - name: "Sonarr"
+        logo: "assets/tools/sonarr.png"
+        subtitle: "ISO manager for overseas"
+        tag: "sonarr"
+        tagstyle: "is-success"
+        url: "http://homelab1.jalexmatey.co.uk:8989"
+      - name: "Radarr"
+        logo: "assets/tools/radarr.png"
+        subtitle: "National ISO manager"
+        tag: "radarr"
+        tagstyle: "is-success"
+        url: "http://homelab1.jalexmatey.co.uk:7878"
+      - name: "Jackett"
+        logo: "assets/tools/jackett.png"
+        subtitle: "Device ISO compliant monitoring"
+        tag: "jackett"
+        tagstyle: "is-success"
+        url: "http://homelab1.jalexmatey.co.uk:9117"
+  - name: "//Other"
+    icon: "fa-solid fa-circle-notch"
+    items:
+      - name: "5eTools"
+        logo: "assets/tools/5etools.png"
+        subtitle: "Locally hosted 5eTools"
+        tag: "5etools"
+        tagstyle: "is-danger"
+        url: "http://homelab1.jalexmatey.co.uk:8008"
